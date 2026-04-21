@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Your Name — Portfolio</title>
 <style>
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'MS Sans Serif', Arial, sans-serif; font-size: 12px; overflow: hidden; cursor: none; }
 
@@ -16,6 +23,8 @@ body { font-family: 'MS Sans Serif', Arial, sans-serif; font-size: 12px; overflo
 /* ── DESKTOP ── */
 .desktop {
   background-image: url('/portfolio/images/windowsbackground.jpg');
+  width: 100vw;
+  height: 100dvh;
   background-size: cover;
   background-position: center;
 }
