@@ -14,8 +14,11 @@ body { font-family: 'MS Sans Serif', Arial, sans-serif; font-size: 12px; overflo
 .trail-dot { position: fixed; width: 8px; height: 8px; border-radius: 50%; pointer-events: none; z-index: 99998; opacity: 1; transition: opacity 0.5s; }
 
 /* ── DESKTOP ── */
-.desktop { width: 100vw; height: 100vh; background: #008080; position: relative; overflow: hidden;
-  background-image: radial-gradient(ellipse at 25% 35%, #009a9a 0%, transparent 55%), radial-gradient(ellipse at 75% 65%, #006868 0%, transparent 50%); }
+.desktop {
+  background-image: url('images/windowsbackground.jpg');
+  background-size: cover;
+  background-position: center;
+}
 
 /* ── ICONS ── */
 .icon-grid { display: flex; flex-direction: column; flex-wrap: wrap; gap: 10px; padding: 14px; max-height: calc(100vh - 40px); }
