@@ -122,11 +122,6 @@ body { font-family: 'VT323', 'MS Sans Serif', Arial, sans-serif; font-size: 14px
 .color-swatch:hover { outline: 1px solid #000; }
 .paint-canvas-wrap { flex: 1; overflow: auto; background: #808080; padding: 4px; }
 
-/* ── BLOG ── */
-.blog-post { padding: 8px 10px; border-bottom: 1px solid #808080; cursor: pointer; }
-.blog-post:hover { background: #000080; color: white; }
-.blog-date { font-size: 11px; color: #666; }
-.blog-post:hover .blog-date { color: #adf; }
 </style>
 </head>
 <body>
@@ -146,11 +141,7 @@ body { font-family: 'VT323', 'MS Sans Serif', Arial, sans-serif; font-size: 14px
     <div class="icon" style="left:16px;top:230px;" ondblclick="openWin('skills')" onclick="selectIcon(this)">
       <div class="icon-img"><img src="icons/skills.png" style="width:64px;height:64px;image-rendering:pixelated;"></div>
       <div class="icon-label">Skills.exe</div>
-    </div>
-    <div class="icon" style="left:16px;top:340px;" ondblclick="openWin('blog')" onclick="selectIcon(this)">
-      <div class="icon-img"><img src="icons/blog.png" style="width:64px;height:64px;image-rendering:pixelated;"></div>
-      <div class="icon-label">Blog</div>
-    </div>
+
     <div class="icon" style="left:16px;top:450px;" ondblclick="openWin('contact')" onclick="selectIcon(this)">
       <div class="icon-img"><img src="icons/contact.png" style="width:64px;height:64px;image-rendering:pixelated;"></div>
       <div class="icon-label">Contact</div>
@@ -379,29 +370,6 @@ body { font-family: 'VT323', 'MS Sans Serif', Arial, sans-serif; font-size: 14px
   </div>
   <div class="status-bar"><div class="status-seg">5 category(s)</div><div class="status-seg">System Ready</div></div>
 </div>
-
-  <!-- ══ BLOG ══ -->
-  <div class="window" id="win-blog" style="top:55px;left:205px;width:360px;">
-    <div class="title-bar" onmousedown="startDrag(event,'win-blog')" onclick="focusWin('blog')">
-      <div class="title-bar-text">✍️ Blog — My Writing</div>
-      <div style="display:flex;gap:2px;"><button class="tb-btn" onclick="closeWin('blog')">✕</button></div>
-    </div>
-    <div class="menu-bar"><div class="menu-item">File</div><div class="menu-item">View</div><div class="menu-item">Help</div></div>
-    <div style="max-height:240px;overflow-y:auto;">
-      <!-- ✏️ EDIT: each blog-post is one entry -->
-      <div class="blog-post" onclick="openProject('https://yourlink.com')">
-        <div style="font-weight:bold;">Post Title Goes Here</div>
-        <div class="blog-date">January 2025</div>
-        <div style="margin-top:2px;">A short summary of what the post is about.</div>
-      </div>
-      <div class="blog-post" onclick="openProject('https://yourlink.com')">
-        <div style="font-weight:bold;">Another Interesting Post</div>
-        <div class="blog-date">November 2024</div>
-        <div style="margin-top:2px;">Short summary goes here.</div>
-      </div>
-    </div>
-    <div class="status-bar"><div class="status-seg" id="blog-count">2 post(s)</div></div>
-  </div>
 
   <!-- ══ CONTACT ══ -->
   <div class="window" id="win-contact" style="top:65px;left:215px;width:290px;">
