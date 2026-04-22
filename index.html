@@ -616,27 +616,6 @@ document.getElementById('desktop').addEventListener('click', e => {
     document.querySelectorAll('.icon').forEach(i => i.classList.remove('selected'));
 });
 
-// ICON DRAG
-document.querySelectorAll('.icon').forEach(icon => {
-  let iox=0, ioy=0, idragging=false;
-  icon.addEventListener('mousedown', e => {
-    if (e.button !== 0) return;
-    idragging=true;
-    const dr=document.getElementById('desktop').getBoundingClientRect();
-    const r=icon.getBoundingClientRect();
-    iox=e.clientX-(r.left-dr.left); ioy=e.clientY-(r.top-dr.top);
-    icon.style.zIndex=++zTop;
-    e.stopPropagation();
-  });
-  document.addEventListener('mousemove', e => {
-    if (!idragging) return;
-    const dr=document.getElementById('desktop').getBoundingClientRect();
-    icon.style.left=Math.max(0,Math.min(dr.width-80, e.clientX-dr.left-iox))+'px';
-    icon.style.top=Math.max(0,Math.min(dr.height-100, e.clientY-dr.top-ioy))+'px';
-  });
-  document.addEventListener('mouseup', () => { idragging=false; });
-});
-
 // MINESWEEPER
 let mineInit=false,mineBoard=[],mineRevealed=[],mineFlagged=[];
 let mineTimer=0,mineInterval=null,mineGameOver=false,mineStarted=false;
