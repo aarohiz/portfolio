@@ -255,29 +255,79 @@ body { font-family: 'VT323', 'MS Sans Serif', Arial, sans-serif; font-size: 14px
     <div class="status-bar"><div class="status-seg">Induction Heads</div></div>
   </div>
 
-  <!-- ══ SKILLS ══ -->
-  <div class="window" id="win-skills" style="top:60px;left:210px;width:300px;">
-    <div class="title-bar" onmousedown="startDrag(event,'win-skills')" onclick="focusWin('skills')">
-      <div class="title-bar-text">⚙️ Skills.exe — System Properties</div>
-      <div style="display:flex;gap:2px;"><button class="tb-btn" onclick="closeWin('skills')">✕</button></div>
-    </div>
-    <div style="padding:10px;font-size:13px;">
-      <!-- ✏️ EDIT -->
-      <div style="margin-bottom:10px;">
-        <div style="font-weight:bold;margin-bottom:4px;border-bottom:1px solid #808080;padding-bottom:2px;">Languages</div>
-        <div style="line-height:2;">▶ Python &nbsp; ▶ R &nbsp; ▶ JavaScript</div>
-      </div>
-      <div style="margin-bottom:10px;">
-        <div style="font-weight:bold;margin-bottom:4px;border-bottom:1px solid #808080;padding-bottom:2px;">ML / Data</div>
-        <div style="line-height:2;">▶ PyTorch &nbsp; ▶ scikit-learn &nbsp; ▶ pandas</div>
-      </div>
-      <div>
-        <div style="font-weight:bold;margin-bottom:4px;border-bottom:1px solid #808080;padding-bottom:2px;">Tools</div>
-        <div style="line-height:2;">▶ Git &nbsp; ▶ SQL &nbsp; ▶ Tableau</div>
-      </div>
-    </div>
-    <div class="status-bar"><div class="status-seg">System Ready</div></div>
+<!-- ══ SKILLS ══ -->
+<div class="window" id="win-skills" style="top:60px;left:210px;width:420px;">
+  <div class="title-bar" onmousedown="startDrag(event,'win-skills')" onclick="focusWin('skills')">
+    <div class="title-bar-text">⚙️ Skills.exe — System Properties</div>
+    <div style="display:flex;gap:2px;"><button class="tb-btn" onclick="closeWin('skills')">✕</button></div>
   </div>
+  <div style="padding:10px;font-size:13px;max-height:420px;overflow-y:auto;">
+
+    <div style="margin-bottom:12px;">
+      <div style="font-weight:bold;margin-bottom:4px;border-bottom:1px solid #808080;padding-bottom:2px;">🤖 ML & AI Systems</div>
+      <div style="line-height:1.9;">
+        ▶ End‑to‑end model development (design, training, evaluation, optimization, deployment)<br>
+        ▶ Agentic orchestration<br>
+        ▶ NLP / LLMs<br>
+        ▶ RAG systems<br>
+        ▶ Recommendation & personalization<br>
+        ▶ Computer vision<br>
+        ▶ Model deployment & lifecycle management
+      </div>
+    </div>
+
+    <div style="margin-bottom:12px;">
+      <div style="font-weight:bold;margin-bottom:4px;border-bottom:1px solid #808080;padding-bottom:2px;">📊 Data & Analytics</div>
+      <div style="line-height:1.9;">
+        ▶ A/B testing & online experiments<br>
+        ▶ Offline ranking metrics<br>
+        ▶ User‑engagement modeling<br>
+        ▶ Metrics design<br>
+        ▶ Dashboards & visual reporting for product decisions
+      </div>
+    </div>
+
+    <div style="margin-bottom:12px;">
+      <div style="font-weight:bold;margin-bottom:4px;border-bottom:1px solid #808080;padding-bottom:2px;">🧠 Cognitive Science</div>
+      <div style="line-height:1.9;">
+        ▶ Cognitive theory & computational modeling<br>
+        ▶ Cognitive neuroscience<br>
+        ▶ EEG & neural signal processing<br>
+        ▶ Perception, attention & memory systems<br>
+        ▶ Human‑computer interaction<br>
+        ▶ Neural computation & ML/brain connections<br>
+        ▶ Philosophy of mind & embodied cognition
+      </div>
+    </div>
+
+    <div style="margin-bottom:12px;">
+      <div style="font-weight:bold;margin-bottom:4px;border-bottom:1px solid #808080;padding-bottom:2px;">📦 Product & Communication</div>
+      <div style="line-height:1.9;">
+        ▶ Translating product ideas into ML features<br>
+        ▶ Defining success metrics & KPIs<br>
+        ▶ Stakeholder communication<br>
+        ▶ Cross‑functional collaboration (product, design, engineering)
+      </div>
+    </div>
+
+    <div style="margin-bottom:4px;">
+      <div style="font-weight:bold;margin-bottom:4px;border-bottom:1px solid #808080;padding-bottom:2px;">🛠️ Tools & Stack</div>
+      <div style="line-height:1.9;">
+        <span style="color:#555;font-size:11px;">Languages</span><br>
+        ▶ Python &nbsp; ▶ SQL &nbsp; ▶ MATLAB &nbsp; ▶ C++ &nbsp; ▶ Java<br>
+        <span style="color:#555;font-size:11px;">Frameworks & Libraries</span><br>
+        ▶ PyTorch &nbsp; ▶ TensorFlow &nbsp; ▶ Scikit‑learn<br>
+        ▶ Pandas &nbsp; ▶ NumPy &nbsp; ▶ Hugging Face<br>
+        ▶ LangChain &nbsp; ▶ MLflow<br>
+        <span style="color:#555;font-size:11px;">Infrastructure & Cloud</span><br>
+        ▶ Docker &nbsp; ▶ GCP &nbsp; ▶ Databricks<br>
+        ▶ Pinecone (vector DBs)
+      </div>
+    </div>
+
+  </div>
+  <div class="status-bar"><div class="status-seg">5 category(s)</div><div class="status-seg">System Ready</div></div>
+</div>
 
   <!-- ══ CONTACT ══ -->
   <div class="window" id="win-contact" style="top:65px;left:215px;width:290px;">
