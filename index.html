@@ -200,7 +200,7 @@ body { font-family: 'VT323', 'MS Sans Serif', Arial, sans-serif; font-size: 14px
     <div style="padding:6px;">
       <!-- ✏️ EDIT: ondblclick opens that project's window. Add a row per project. -->
       <div class="folder-item" ondblclick="openWin('proj-brainvita')">📁 Brainvita</div>
-      <div class="folder-item" ondblclick="openWin('proj-two')">📁 Project Two</div>
+      <div class="folder-item" ondblclick="openWin('proj-two')">📁 Induction Heads Experiment</div>
       <div class="folder-item" ondblclick="openWin('proj-three')">📁 Project Three</div>
     </div>
     <div class="status-bar"><div class="status-seg">3 object(s)</div><div class="status-seg">Double-click to open</div></div>
@@ -239,7 +239,7 @@ body { font-family: 'VT323', 'MS Sans Serif', Arial, sans-serif; font-size: 14px
     <div class="status-bar"><div class="status-seg">Brainvita</div></div>
   </div>
 
-  <!-- ✏️ PROJECT: TWO — copy this block for each new project -->
+  <!-- ✏️ PROJECT: TWO — Mechinterp project -->
   <div class="window" id="win-proj-two" style="top:90px;left:270px;width:420px;">
     <div class="title-bar" onmousedown="startDrag(event,'win-proj-two')" onclick="focusWin('proj-two')">
       <div class="title-bar-text">📁 Project Two</div>
@@ -258,32 +258,10 @@ body { font-family: 'VT323', 'MS Sans Serif', Arial, sans-serif; font-size: 14px
       </div>
       <!-- ✏️ Links -->
       <div style="display:flex;gap:6px;flex-wrap:wrap;">
-        <button class="win-btn" onclick="openProject('https://yourlink.com')">🌐 Live Site</button>
-        <button class="win-btn" onclick="openProject('https://github.com/yourname/repo')">🐙 GitHub</button>
+        <button class="win-btn" onclick="openProject('https://github.com/aarohiz/induction_heads_experiment')">🐙 GitHub</button>
       </div>
     </div>
     <div class="status-bar"><div class="status-seg">Project Two</div></div>
-  </div>
-
-  <!-- ✏️ PROJECT: THREE -->
-  <div class="window" id="win-proj-three" style="top:100px;left:280px;width:420px;">
-    <div class="title-bar" onmousedown="startDrag(event,'win-proj-three')" onclick="focusWin('proj-three')">
-      <div class="title-bar-text">📁 Project Three</div>
-      <div style="display:flex;gap:2px;"><button class="tb-btn" onclick="closeWin('proj-three')">✕</button></div>
-    </div>
-    <div class="menu-bar"><div class="menu-item">File</div><div class="menu-item">Edit</div><div class="menu-item">Help</div></div>
-    <div style="padding:12px;font-size:13px;line-height:1.7;">
-      <img src="images/projectthree.png" style="width:100%;border:2px inset #808080;margin-bottom:10px;display:block;" onerror="this.style.display='none'">
-      <p style="margin-bottom:8px;">Describe what this project is and what makes it interesting.</p>
-      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
-        <span class="proj-tag">Python</span>
-        <span class="proj-tag">Data</span>
-      </div>
-      <div style="display:flex;gap:6px;flex-wrap:wrap;">
-        <button class="win-btn" onclick="openProject('https://github.com/yourname/repo')">🐙 GitHub</button>
-      </div>
-    </div>
-    <div class="status-bar"><div class="status-seg">Project Three</div></div>
   </div>
 
   <!-- ══ SKILLS ══ -->
@@ -310,29 +288,6 @@ body { font-family: 'VT323', 'MS Sans Serif', Arial, sans-serif; font-size: 14px
     <div class="status-bar"><div class="status-seg">System Ready</div></div>
   </div>
 
-  <!-- ══ BLOG ══ -->
-  <div class="window" id="win-blog" style="top:55px;left:205px;width:360px;">
-    <div class="title-bar" onmousedown="startDrag(event,'win-blog')" onclick="focusWin('blog')">
-      <div class="title-bar-text">✍️ Blog — My Writing</div>
-      <div style="display:flex;gap:2px;"><button class="tb-btn" onclick="closeWin('blog')">✕</button></div>
-    </div>
-    <div class="menu-bar"><div class="menu-item">File</div><div class="menu-item">View</div><div class="menu-item">Help</div></div>
-    <div style="max-height:240px;overflow-y:auto;">
-      <!-- ✏️ EDIT: each blog-post is one entry -->
-      <div class="blog-post" onclick="openProject('https://yourlink.com')">
-        <div style="font-weight:bold;">Post Title Goes Here</div>
-        <div class="blog-date">January 2025</div>
-        <div style="margin-top:2px;">A short summary of what the post is about.</div>
-      </div>
-      <div class="blog-post" onclick="openProject('https://yourlink.com')">
-        <div style="font-weight:bold;">Another Interesting Post</div>
-        <div class="blog-date">November 2024</div>
-        <div style="margin-top:2px;">Short summary goes here.</div>
-      </div>
-    </div>
-    <div class="status-bar"><div class="status-seg" id="blog-count">2 post(s)</div></div>
-  </div>
-
   <!-- ══ CONTACT ══ -->
   <div class="window" id="win-contact" style="top:65px;left:215px;width:290px;">
     <div class="title-bar" onmousedown="startDrag(event,'win-contact')" onclick="focusWin('contact')">
@@ -341,12 +296,12 @@ body { font-family: 'VT323', 'MS Sans Serif', Arial, sans-serif; font-size: 14px
     </div>
     <div style="padding:12px;font-size:13px;line-height:2.4;">
       <!-- ✏️ EDIT -->
-      <div>📧 <a href="mailto:you@email.com" style="color:#000;">you@email.com</a></div>
-      <div>🐙 <a href="https://github.com/yourname" target="_blank" style="color:#000;">github.com/yourname</a></div>
-      <div>💼 <a href="https://linkedin.com/in/yourname" target="_blank" style="color:#000;">linkedin.com/in/yourname</a></div>
+      <div>📧 <a href="azade@berkeley.edu" style="color:#000;">azade@berkeley.edu</a></div>
+      <div>🐙 <a href="https://github.com/aarohiz" target="_blank" style="color:#000;">github.com/aarohiz</a></div>
+      <div>💼 <a href="https://linkedin.com/in/aarohizade" target="_blank" style="color:#000;">linkedin.com/in/aarohizade</a></div>
     </div>
     <div style="padding:0 12px 12px;text-align:center;">
-      <button class="win-btn" onclick="window.location.href='mailto:you@email.com'">Send Email ✉️</button>
+      <button class="win-btn" onclick="window.location.href='azade@berkeley.edu'">Send Email ✉️</button>
     </div>
   </div>
 
@@ -362,8 +317,8 @@ body { font-family: 'VT323', 'MS Sans Serif', Arial, sans-serif; font-size: 14px
       <div style="color:#666;margin:4px 0 14px;font-size:12px;">Last modified: 2025</div>
       <div style="display:flex;gap:6px;justify-content:center;">
         <!-- ✏️ EDIT: update filename to match your actual PDF -->
-        <button class="win-btn" onclick="openProject('resume.pdf')">Open</button>
-        <button class="win-btn" onclick="window.location.href='resume.pdf'">Download ⬇️</button>
+        <button class="win-btn" onclick="openProject('files/AarohiZade_Resume.pdf')">Open</button>
+        <button class="win-btn" onclick="window.location.href='files/AarohiZade_Resume.pdf'">Download ⬇️</button>
       </div>
     </div>
   </div>
