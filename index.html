@@ -35,7 +35,7 @@ body { font-family: 'VT323', 'MS Sans Serif', Arial, sans-serif; font-size: 14px
 .icon-grid { position: absolute; top: 0; left: 0; width: 100%; height: calc(100% - 32px); pointer-events: none; }
 .icon { display: flex; flex-direction: column; align-items: center; gap: 4px; width: 80px; cursor: pointer; padding: 4px; border-radius: 1px; position: absolute; pointer-events: all; }
 .icon:hover .icon-label, .icon.selected .icon-label { background: #000080; color: white; outline: 1px dotted rgba(255,255,255,0.8); }
-.icon-img { font-size: 64px; width: 68px; height: 68px; display: flex; align-items: center; justify-content: center; }
+.icon-img { font-size: 48px; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; }
 .icon-label { font-family: 'VT323', monospace; font-size: 16px; color: white; text-align: center; text-shadow: 1px 1px 2px #000, -1px -1px 2px #000; line-height: 1.2; padding: 1px 3px; word-break: break-word; }
 
 /* ── WINDOWS ── */
@@ -122,6 +122,11 @@ body { font-family: 'VT323', 'MS Sans Serif', Arial, sans-serif; font-size: 14px
 .color-swatch:hover { outline: 1px solid #000; }
 .paint-canvas-wrap { flex: 1; overflow: auto; background: #808080; padding: 4px; }
 
+/* ── BLOG ── */
+.blog-post { padding: 8px 10px; border-bottom: 1px solid #808080; cursor: pointer; }
+.blog-post:hover { background: #000080; color: white; }
+.blog-date { font-size: 11px; color: #666; }
+.blog-post:hover .blog-date { color: #adf; }
 </style>
 </head>
 <body>
@@ -130,36 +135,40 @@ body { font-family: 'VT323', 'MS Sans Serif', Arial, sans-serif; font-size: 14px
 
   <!-- ══ ICON GRID ══ -->
   <div class="icon-grid" id="icon-grid">
-    <div class="icon" style="left:16px;top:10px;" ondblclick="openWin('about')" onclick="selectIcon(this)">
-      <div class="icon-img"><img src="icons/aboutme.png" style="width:64px;height:64px;image-rendering:pixelated;"></div>
+    <div class="icon" style="left:16px;top:10px;" ondblclick="openWin('about')" onclick="selectIcon(this, event)">
+      <div class="icon-img"><img src="icons/aboutme.png" style="width:48px;height:48px;image-rendering:pixelated;"></div>
       <div class="icon-label">About Me</div>
     </div>
-    <div class="icon" style="left:16px;top:120px;" ondblclick="openWin('projects')" onclick="selectIcon(this)">
-      <div class="icon-img"><img src="icons/projects.png" style="width:64px;height:64px;image-rendering:pixelated;"></div>
+    <div class="icon" style="left:16px;top:120px;" ondblclick="openWin('projects')" onclick="selectIcon(this, event)">
+      <div class="icon-img"><img src="icons/projects.png" style="width:48px;height:48px;image-rendering:pixelated;"></div>
       <div class="icon-label">My Projects</div>
     </div>
-    <div class="icon" style="left:16px;top:230px;" ondblclick="openWin('skills')" onclick="selectIcon(this)">
-      <div class="icon-img"><img src="icons/skills.png" style="width:64px;height:64px;image-rendering:pixelated;"></div>
+    <div class="icon" style="left:16px;top:230px;" ondblclick="openWin('skills')" onclick="selectIcon(this, event)">
+      <div class="icon-img"><img src="icons/skills.png" style="width:48px;height:48px;image-rendering:pixelated;"></div>
       <div class="icon-label">Skills.exe</div>
-
-    <div class="icon" style="left:16px;top:450px;" ondblclick="openWin('contact')" onclick="selectIcon(this)">
-      <div class="icon-img"><img src="icons/contact.png" style="width:64px;height:64px;image-rendering:pixelated;"></div>
+    </div>
+    <div class="icon" style="left:16px;top:340px;" ondblclick="openWin('blog')" onclick="selectIcon(this, event)">
+      <div class="icon-img"><img src="icons/blog.png" style="width:48px;height:48px;image-rendering:pixelated;"></div>
+      <div class="icon-label">Blog</div>
+    </div>
+    <div class="icon" style="left:16px;top:450px;" ondblclick="openWin('contact')" onclick="selectIcon(this, event)">
+      <div class="icon-img"><img src="icons/contact.png" style="width:48px;height:48px;image-rendering:pixelated;"></div>
       <div class="icon-label">Contact</div>
     </div>
-    <div class="icon" style="left:110px;top:10px;" ondblclick="openWin('resume')" onclick="selectIcon(this)">
-      <div class="icon-img"><img src="icons/resume.png" style="width:64px;height:64px;image-rendering:pixelated;"></div>
+    <div class="icon" style="left:110px;top:10px;" ondblclick="openWin('resume')" onclick="selectIcon(this, event)">
+      <div class="icon-img"><img src="icons/resume.png" style="width:48px;height:48px;image-rendering:pixelated;"></div>
       <div class="icon-label">Resume.doc</div>
     </div>
-    <div class="icon" style="left:110px;top:120px;" ondblclick="openWin('minesweeper')" onclick="selectIcon(this)">
-      <div class="icon-img"><img src="icons/minesweeper.png" style="width:64px;height:64px;image-rendering:pixelated;"></div>
+    <div class="icon" style="left:110px;top:120px;" ondblclick="openWin('minesweeper')" onclick="selectIcon(this, event)">
+      <div class="icon-img"><img src="icons/minesweeper.png" style="width:48px;height:48px;image-rendering:pixelated;"></div>
       <div class="icon-label">Minesweeper</div>
     </div>
-    <div class="icon" style="left:110px;top:230px;" ondblclick="openWin('paint')" onclick="selectIcon(this)">
-      <div class="icon-img"><img src="icons/paint.png" style="width:64px;height:64px;image-rendering:pixelated;"></div>
+    <div class="icon" style="left:110px;top:230px;" ondblclick="openWin('paint')" onclick="selectIcon(this, event)">
+      <div class="icon-img"><img src="icons/paint.png" style="width:48px;height:48px;image-rendering:pixelated;"></div>
       <div class="icon-label">MS Paint</div>
     </div>
-    <div class="icon" style="left:110px;top:340px;" ondblclick="openWin('recyclebin')" onclick="selectIcon(this)">
-      <div class="icon-img"><img src="icons/recycle.png" style="width:64px;height:64px;image-rendering:pixelated;"></div>
+    <div class="icon" style="left:110px;top:340px;" ondblclick="openWin('recyclebin')" onclick="selectIcon(this, event)">
+      <div class="icon-img"><img src="icons/recycle.png" style="width:48px;height:48px;image-rendering:pixelated;"></div>
       <div class="icon-label">Recycle Bin</div>
     </div>
   </div>
@@ -191,10 +200,8 @@ body { font-family: 'VT323', 'MS Sans Serif', Arial, sans-serif; font-size: 14px
     <div style="padding:6px;">
       <!-- ✏️ EDIT: ondblclick opens that project's window. Add a row per project. -->
       <div class="folder-item" ondblclick="openWin('proj-brainvita')">📁 Brainvita</div>
-      <div class="folder-item" ondblclick="openWin('proj-mechinterp')">📁 Mechanistic Interpretability</div>
-      <div class="folder-item" ondblclick="openWin('proj-cyborg')">📁 Cyborg Implementation with Live Neural Signals</div>
-      <div class="folder-item" ondblclick="openWin('proj-pacman')">📁 RL Agent Plays Pac-Man </div>
-
+      <div class="folder-item" ondblclick="openWin('proj-two')">📁 Project Two</div>
+      <div class="folder-item" ondblclick="openWin('proj-three')">📁 Project Three</div>
     </div>
     <div class="status-bar"><div class="status-seg">3 object(s)</div><div class="status-seg">Double-click to open</div></div>
   </div>
@@ -218,12 +225,13 @@ body { font-family: 'VT323', 'MS Sans Serif', Arial, sans-serif; font-size: 14px
       <!-- ✏️ Screenshot: put image at images/brainvita.png, or delete this line if you don't have one yet -->
       <img src="images/brainvita.png" style="width:100%;border:2px inset #808080;margin-bottom:10px;display:block;" onerror="this.style.display='none'">
       <!-- ✏️ Description -->
-      <p style="margin-bottom:8px;">A browser-based solitaire game inspired by a childhood favorite. Built with HTML deployed with Vercel.</p>
+      <p style="margin-bottom:8px;">A browser-based peg solitaire game inspired by a childhood favorite. Fully playable in the browser with no libraries.</p>
       <!-- ✏️ Tags -->
       <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
         <span class="proj-tag">JavaScript</span>
         <span class="proj-tag">HTML/CSS</span>
       </div>
+      <!-- ✏️ Links: remove buttons you don't have -->
       <div style="display:flex;gap:6px;flex-wrap:wrap;">
         <button class="win-btn" onclick="openProject('https://brainvita-red.vercel.app/')">🌐 Live Site</button>
       </div>
@@ -231,7 +239,7 @@ body { font-family: 'VT323', 'MS Sans Serif', Arial, sans-serif; font-size: 14px
     <div class="status-bar"><div class="status-seg">Brainvita</div></div>
   </div>
 
-  <!--  PROJECT: TWO (mechinterp)  -->
+  <!-- ✏️ PROJECT: TWO — copy this block for each new project -->
   <div class="window" id="win-proj-two" style="top:90px;left:270px;width:420px;">
     <div class="title-bar" onmousedown="startDrag(event,'win-proj-two')" onclick="focusWin('proj-two')">
       <div class="title-bar-text">📁 Project Two</div>
@@ -242,7 +250,7 @@ body { font-family: 'VT323', 'MS Sans Serif', Arial, sans-serif; font-size: 14px
       <!-- ✏️ Screenshot -->
       <img src="images/projecttwo.png" style="width:100%;border:2px inset #808080;margin-bottom:10px;display:block;" onerror="this.style.display='none'">
       <!-- ✏️ Description -->
-      <p style="margin-bottom:8px;">*Research topic taken from Neel Nanda’s* [200 Concrete Open Problems in Mechanistic Interpretability](https://docs.google.com/spreadsheets/d/1oOdrQ80jDK-aGn-EVdDt3dg65GhmzrvBWzJ6MUZB8n4/edit?gid=0#gid=0)*. Huge thanks for all of the MechInterp resources!*In this project, I train a GPT-2 style transformer using rotary positional encodings with a single attention head. This basic transformer structure allows me to run attention experiments more simply, and to focus on the role of rotary embeddings instead of standard sinusoidal embeddings. I use the TransformerLens library to “peek” into the transformer, using visualizations of attention head activations.</p>
+      <p style="margin-bottom:8px;">Describe what this project is and what makes it interesting.</p>
       <!-- ✏️ Tags -->
       <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
         <span class="proj-tag">Python</span>
@@ -277,99 +285,53 @@ body { font-family: 'VT323', 'MS Sans Serif', Arial, sans-serif; font-size: 14px
     </div>
     <div class="status-bar"><div class="status-seg">Project Three</div></div>
   </div>
-  <!-- ✏️ PROJECT: THREE -->
-  <div class="window" id="win-proj-three" style="top:100px;left:280px;width:420px;">
-    <div class="title-bar" onmousedown="startDrag(event,'win-proj-three')" onclick="focusWin('proj-three')">
-      <div class="title-bar-text">📁 Project Three</div>
-      <div style="display:flex;gap:2px;"><button class="tb-btn" onclick="closeWin('proj-three')">✕</button></div>
+
+  <!-- ══ SKILLS ══ -->
+  <div class="window" id="win-skills" style="top:60px;left:210px;width:300px;">
+    <div class="title-bar" onmousedown="startDrag(event,'win-skills')" onclick="focusWin('skills')">
+      <div class="title-bar-text">⚙️ Skills.exe — System Properties</div>
+      <div style="display:flex;gap:2px;"><button class="tb-btn" onclick="closeWin('skills')">✕</button></div>
     </div>
-    <div class="menu-bar"><div class="menu-item">File</div><div class="menu-item">Edit</div><div class="menu-item">Help</div></div>
-    <div style="padding:12px;font-size:13px;line-height:1.7;">
-      <img src="images/projectthree.png" style="width:100%;border:2px inset #808080;margin-bottom:10px;display:block;" onerror="this.style.display='none'">
-      <p style="margin-bottom:8px;">Describe what this project is and what makes it interesting.</p>
-      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
-        <span class="proj-tag">Python</span>
-        <span class="proj-tag">Data</span>
+    <div style="padding:10px;font-size:13px;">
+      <!-- ✏️ EDIT -->
+      <div style="margin-bottom:10px;">
+        <div style="font-weight:bold;margin-bottom:4px;border-bottom:1px solid #808080;padding-bottom:2px;">Languages</div>
+        <div style="line-height:2;">▶ Python &nbsp; ▶ R &nbsp; ▶ JavaScript</div>
       </div>
-      <div style="display:flex;gap:6px;flex-wrap:wrap;">
-        <button class="win-btn" onclick="openProject('https://github.com/yourname/repo')">🐙 GitHub</button>
+      <div style="margin-bottom:10px;">
+        <div style="font-weight:bold;margin-bottom:4px;border-bottom:1px solid #808080;padding-bottom:2px;">ML / Data</div>
+        <div style="line-height:2;">▶ PyTorch &nbsp; ▶ scikit-learn &nbsp; ▶ pandas</div>
+      </div>
+      <div>
+        <div style="font-weight:bold;margin-bottom:4px;border-bottom:1px solid #808080;padding-bottom:2px;">Tools</div>
+        <div style="line-height:2;">▶ Git &nbsp; ▶ SQL &nbsp; ▶ Tableau</div>
       </div>
     </div>
-    <div class="status-bar"><div class="status-seg">Project Three</div></div>
+    <div class="status-bar"><div class="status-seg">System Ready</div></div>
   </div>
 
-<!-- ══ SKILLS ══ -->
-<div class="window" id="win-skills" style="top:60px;left:210px;width:420px;">
-  <div class="title-bar" onmousedown="startDrag(event,'win-skills')" onclick="focusWin('skills')">
-    <div class="title-bar-text">⚙️ Skills.exe — System Properties</div>
-    <div style="display:flex;gap:2px;"><button class="tb-btn" onclick="closeWin('skills')">✕</button></div>
+  <!-- ══ BLOG ══ -->
+  <div class="window" id="win-blog" style="top:55px;left:205px;width:360px;">
+    <div class="title-bar" onmousedown="startDrag(event,'win-blog')" onclick="focusWin('blog')">
+      <div class="title-bar-text">✍️ Blog — My Writing</div>
+      <div style="display:flex;gap:2px;"><button class="tb-btn" onclick="closeWin('blog')">✕</button></div>
+    </div>
+    <div class="menu-bar"><div class="menu-item">File</div><div class="menu-item">View</div><div class="menu-item">Help</div></div>
+    <div style="max-height:240px;overflow-y:auto;">
+      <!-- ✏️ EDIT: each blog-post is one entry -->
+      <div class="blog-post" onclick="openProject('https://yourlink.com')">
+        <div style="font-weight:bold;">Post Title Goes Here</div>
+        <div class="blog-date">January 2025</div>
+        <div style="margin-top:2px;">A short summary of what the post is about.</div>
+      </div>
+      <div class="blog-post" onclick="openProject('https://yourlink.com')">
+        <div style="font-weight:bold;">Another Interesting Post</div>
+        <div class="blog-date">November 2024</div>
+        <div style="margin-top:2px;">Short summary goes here.</div>
+      </div>
+    </div>
+    <div class="status-bar"><div class="status-seg" id="blog-count">2 post(s)</div></div>
   </div>
-  <div class="menu-bar"><div class="menu-item">File</div><div class="menu-item">Edit</div><div class="menu-item">Help</div></div>
-  <div style="padding:10px;font-size:13px;max-height:420px;overflow-y:auto;">
-
-    <div style="margin-bottom:12px;">
-      <div style="font-weight:bold;margin-bottom:4px;border-bottom:1px solid #808080;padding-bottom:2px;">🤖 ML & AI Systems</div>
-      <div style="line-height:1.9;">
-        ▶ End‑to‑end model development (design, training, evaluation, optimization, deployment)<br>
-        ▶ Agentic orchestration<br>
-        ▶ NLP / LLMs<br>
-        ▶ RAG systems<br>
-        ▶ Recommendation & personalization<br>
-        ▶ Computer vision<br>
-        ▶ Model deployment & lifecycle management
-      </div>
-    </div>
-
-    <div style="margin-bottom:12px;">
-      <div style="font-weight:bold;margin-bottom:4px;border-bottom:1px solid #808080;padding-bottom:2px;">📊 Data & Analytics</div>
-      <div style="line-height:1.9;">
-        ▶ A/B testing & online experiments<br>
-        ▶ Offline ranking metrics<br>
-        ▶ User‑engagement modeling<br>
-        ▶ Metrics design & KPI definition<br>
-        ▶ Dashboards & visual reporting for product decisions
-      </div>
-    </div>
-
-    <div style="margin-bottom:12px;">
-      <div style="font-weight:bold;margin-bottom:4px;border-bottom:1px solid #808080;padding-bottom:2px;">🧠 Cognitive Science</div>
-      <div style="line-height:1.9;">
-        ▶ Cognitive theory & computational modeling<br>
-        ▶ Cognitive neuroscience<br>
-        ▶ EEG / neural signal processing<br>
-        ▶ Human‑computer interaction<br>
-        ▶ Perception, attention & memory systems<br>
-        ▶ Neural computation & ML/brain connections
-      </div>
-    </div>
-
-    <div style="margin-bottom:12px;">
-      <div style="font-weight:bold;margin-bottom:4px;border-bottom:1px solid #808080;padding-bottom:2px;">📦 Product & Communication</div>
-      <div style="line-height:1.9;">
-        ▶ Translating product ideas into ML features<br>
-        ▶ Defining success metrics & KPIs<br>
-        ▶ Stakeholder communication<br>
-        ▶ Cross‑functional collaboration (product, design, engineering)
-      </div>
-    </div>
-
-    <div style="margin-bottom:4px;">
-      <div style="font-weight:bold;margin-bottom:4px;border-bottom:1px solid #808080;padding-bottom:2px;">🛠️ Tools & Stack</div>
-      <div style="line-height:1.9;">
-        <span style="color:#555;font-size:12px;">Languages</span><br>
-        ▶ Python &nbsp; ▶ SQL &nbsp; ▶ MATLAB &nbsp; ▶ C++ &nbsp; ▶ Java<br>
-        <span style="color:#555;font-size:12px;">Frameworks & Libraries</span><br>
-        ▶ PyTorch &nbsp; ▶ TensorFlow &nbsp; ▶ Scikit‑learn &nbsp; ▶ Pandas &nbsp; ▶ NumPy<br>
-        ▶ Hugging Face &nbsp; ▶ LangChain &nbsp; ▶ MLflow<br>
-        <span style="color:#555;font-size:12px;">Infrastructure & Cloud</span><br>
-        ▶ Docker &nbsp; ▶ GCP &nbsp; ▶ AWS &nbsp; ▶ Databricks<br>
-        ▶ Pinecone (vector DBs)
-      </div>
-    </div>
-
-  </div>
-  <div class="status-bar"><div class="status-seg">5 category(s)</div><div class="status-seg">System Ready</div></div>
-</div>
 
   <!-- ══ CONTACT ══ -->
   <div class="window" id="win-contact" style="top:65px;left:215px;width:290px;">
@@ -379,12 +341,12 @@ body { font-family: 'VT323', 'MS Sans Serif', Arial, sans-serif; font-size: 14px
     </div>
     <div style="padding:12px;font-size:13px;line-height:2.4;">
       <!-- ✏️ EDIT -->
-      <div>📧 <a href="azade@berkeley.edu style="color:#000;">azade@berkeley.edu</a></div>
-      <div>🐙 <a href="https://github.com/aarohiz" target="_blank" style="color:#000;">github.com/aarohiz</a></div>
-      <div>💼 <a href="https://linkedin.com/in/aarohizade" target="_blank" style="color:#000;">linkedin.com/in/aarohizade</a></div>
+      <div>📧 <a href="mailto:you@email.com" style="color:#000;">you@email.com</a></div>
+      <div>🐙 <a href="https://github.com/yourname" target="_blank" style="color:#000;">github.com/yourname</a></div>
+      <div>💼 <a href="https://linkedin.com/in/yourname" target="_blank" style="color:#000;">linkedin.com/in/yourname</a></div>
     </div>
     <div style="padding:0 12px 12px;text-align:center;">
-      <button class="win-btn" onclick="window.location.href='mailto:azade@berkeley.edu'">Send Email ✉️</button>
+      <button class="win-btn" onclick="window.location.href='mailto:you@email.com'">Send Email ✉️</button>
     </div>
   </div>
 
@@ -497,6 +459,7 @@ body { font-family: 'VT323', 'MS Sans Serif', Arial, sans-serif; font-size: 14px
       <div class="start-menu-item" onclick="openWin('about');toggleStart()"><span class="sm-icon">🧑‍💻</span>About Me</div>
       <div class="start-menu-item" onclick="openWin('projects');toggleStart()"><span class="sm-icon">📁</span>My Projects</div>
       <div class="start-menu-item" onclick="openWin('skills');toggleStart()"><span class="sm-icon">⚙️</span>Skills</div>
+      <div class="start-menu-item" onclick="openWin('blog');toggleStart()"><span class="sm-icon">✍️</span>Blog</div>
       <div class="start-menu-item" onclick="openWin('contact');toggleStart()"><span class="sm-icon">📧</span>Contact</div>
       <div class="start-menu-item" onclick="openWin('resume');toggleStart()"><span class="sm-icon">📄</span>Resume</div>
       <div class="start-menu-divider"></div>
@@ -531,7 +494,7 @@ const openWindows = new Map();
 // ✏️ EDIT: Add one line here per project window you add
 const WIN_LABELS = {
   about:'🧑‍💻 About Me', projects:'📁 Projects', skills:'⚙️ Skills',
-  contact:'📧 Contact', resume:'📄 Resume',
+  blog:'✍️ Blog', contact:'📧 Contact', resume:'📄 Resume',
   minesweeper:'💣 Minesweeper', paint:'🎨 MS Paint', recyclebin:'🗑️ Recycle Bin',
   'proj-brainvita': '📁 Brainvita',
   'proj-two':       '📁 Project Two',
@@ -569,7 +532,8 @@ function updateTaskbar() {
     b.textContent = WIN_LABELS[id] || id; b.onclick = () => focusWin(id); c.appendChild(b);
   });
 }
-function selectIcon(el) {
+function selectIcon(el, e) {
+  e.stopPropagation();
   document.querySelectorAll('.icon').forEach(i => i.classList.remove('selected'));
   el.classList.add('selected');
 }
@@ -614,6 +578,27 @@ document.addEventListener('mouseup', () => dragging = null);
 document.getElementById('desktop').addEventListener('click', e => {
   if (e.target === document.getElementById('desktop') || e.target === document.getElementById('icon-grid'))
     document.querySelectorAll('.icon').forEach(i => i.classList.remove('selected'));
+});
+
+// ICON DRAG
+document.querySelectorAll('.icon').forEach(icon => {
+  let iox=0, ioy=0, idragging=false;
+  icon.addEventListener('mousedown', e => {
+    if (e.button !== 0) return;
+    idragging=true;
+    const dr=document.getElementById('desktop').getBoundingClientRect();
+    const r=icon.getBoundingClientRect();
+    iox=e.clientX-(r.left-dr.left); ioy=e.clientY-(r.top-dr.top);
+    icon.style.zIndex=++zTop;
+    e.stopPropagation();
+  });
+  document.addEventListener('mousemove', e => {
+    if (!idragging) return;
+    const dr=document.getElementById('desktop').getBoundingClientRect();
+    icon.style.left=Math.max(0,Math.min(dr.width-80, e.clientX-dr.left-iox))+'px';
+    icon.style.top=Math.max(0,Math.min(dr.height-100, e.clientY-dr.top-ioy))+'px';
+  });
+  document.addEventListener('mouseup', () => { idragging=false; });
 });
 
 // MINESWEEPER
