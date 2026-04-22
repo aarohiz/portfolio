@@ -122,11 +122,6 @@ body { font-family: 'VT323', 'MS Sans Serif', Arial, sans-serif; font-size: 14px
 .color-swatch:hover { outline: 1px solid #000; }
 .paint-canvas-wrap { flex: 1; overflow: auto; background: #808080; padding: 4px; }
 
-/* ── BLOG ── */
-.blog-post { padding: 8px 10px; border-bottom: 1px solid #808080; cursor: pointer; }
-.blog-post:hover { background: #000080; color: white; }
-.blog-date { font-size: 11px; color: #666; }
-.blog-post:hover .blog-date { color: #adf; }
 </style>
 </head>
 <body>
@@ -146,10 +141,6 @@ body { font-family: 'VT323', 'MS Sans Serif', Arial, sans-serif; font-size: 14px
     <div class="icon" style="left:16px;top:230px;" ondblclick="openWin('skills')" onclick="selectIcon(this, event)">
       <div class="icon-img"><img src="icons/skills.png" style="width:48px;height:48px;image-rendering:pixelated;"></div>
       <div class="icon-label">Skills.exe</div>
-    </div>
-    <div class="icon" style="left:16px;top:340px;" ondblclick="openWin('blog')" onclick="selectIcon(this, event)">
-      <div class="icon-img"><img src="icons/blog.png" style="width:48px;height:48px;image-rendering:pixelated;"></div>
-      <div class="icon-label">Blog</div>
     </div>
     <div class="icon" style="left:16px;top:450px;" ondblclick="openWin('contact')" onclick="selectIcon(this, event)">
       <div class="icon-img"><img src="icons/contact.png" style="width:48px;height:48px;image-rendering:pixelated;"></div>
@@ -201,7 +192,6 @@ body { font-family: 'VT323', 'MS Sans Serif', Arial, sans-serif; font-size: 14px
       <!-- ✏️ EDIT: ondblclick opens that project's window. Add a row per project. -->
       <div class="folder-item" ondblclick="openWin('proj-brainvita')">📁 Brainvita</div>
       <div class="folder-item" ondblclick="openWin('proj-two')">📁 Induction Heads Experiment</div>
-      <div class="folder-item" ondblclick="openWin('proj-three')">📁 Project Three</div>
     </div>
     <div class="status-bar"><div class="status-seg">3 object(s)</div><div class="status-seg">Double-click to open</div></div>
   </div>
@@ -242,7 +232,7 @@ body { font-family: 'VT323', 'MS Sans Serif', Arial, sans-serif; font-size: 14px
   <!-- ✏️ PROJECT: TWO — Mechinterp project -->
   <div class="window" id="win-proj-two" style="top:90px;left:270px;width:420px;">
     <div class="title-bar" onmousedown="startDrag(event,'win-proj-two')" onclick="focusWin('proj-two')">
-      <div class="title-bar-text">📁 Project Two</div>
+      <div class="title-bar-text">📁 Induction Heads</div>
       <div style="display:flex;gap:2px;"><button class="tb-btn" onclick="closeWin('proj-two')">✕</button></div>
     </div>
     <div class="menu-bar"><div class="menu-item">File</div><div class="menu-item">Edit</div><div class="menu-item">Help</div></div>
@@ -250,18 +240,19 @@ body { font-family: 'VT323', 'MS Sans Serif', Arial, sans-serif; font-size: 14px
       <!-- ✏️ Screenshot -->
       <img src="images/projecttwo.png" style="width:100%;border:2px inset #808080;margin-bottom:10px;display:block;" onerror="this.style.display='none'">
       <!-- ✏️ Description -->
-      <p style="margin-bottom:8px;">Describe what this project is and what makes it interesting.</p>
+      <p style="margin-bottom:8px;">Induction heads are a well-fleshed out component of transformer architecture. Do they respond to semantic structure, or are they merely picking up on patterns within text?</p>
       <!-- ✏️ Tags -->
       <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
         <span class="proj-tag">Python</span>
         <span class="proj-tag">ML</span>
+        <span class="proj-tag">mechinterp</span>
       </div>
       <!-- ✏️ Links -->
       <div style="display:flex;gap:6px;flex-wrap:wrap;">
         <button class="win-btn" onclick="openProject('https://github.com/aarohiz/induction_heads_experiment')">🐙 GitHub</button>
       </div>
     </div>
-    <div class="status-bar"><div class="status-seg">Project Two</div></div>
+    <div class="status-bar"><div class="status-seg">Induction Heads</div></div>
   </div>
 
   <!-- ══ SKILLS ══ -->
@@ -414,7 +405,6 @@ body { font-family: 'VT323', 'MS Sans Serif', Arial, sans-serif; font-size: 14px
       <div class="start-menu-item" onclick="openWin('about');toggleStart()"><span class="sm-icon">🧑‍💻</span>About Me</div>
       <div class="start-menu-item" onclick="openWin('projects');toggleStart()"><span class="sm-icon">📁</span>My Projects</div>
       <div class="start-menu-item" onclick="openWin('skills');toggleStart()"><span class="sm-icon">⚙️</span>Skills</div>
-      <div class="start-menu-item" onclick="openWin('blog');toggleStart()"><span class="sm-icon">✍️</span>Blog</div>
       <div class="start-menu-item" onclick="openWin('contact');toggleStart()"><span class="sm-icon">📧</span>Contact</div>
       <div class="start-menu-item" onclick="openWin('resume');toggleStart()"><span class="sm-icon">📄</span>Resume</div>
       <div class="start-menu-divider"></div>
@@ -449,7 +439,7 @@ const openWindows = new Map();
 // ✏️ EDIT: Add one line here per project window you add
 const WIN_LABELS = {
   about:'🧑‍💻 About Me', projects:'📁 Projects', skills:'⚙️ Skills',
-  blog:'✍️ Blog', contact:'📧 Contact', resume:'📄 Resume',
+  contact:'📧 Contact', resume:'📄 Resume',
   minesweeper:'💣 Minesweeper', paint:'🎨 MS Paint', recyclebin:'🗑️ Recycle Bin',
   'proj-brainvita': '📁 Brainvita',
   'proj-two':       '📁 Project Two',
